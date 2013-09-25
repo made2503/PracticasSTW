@@ -1,0 +1,14 @@
+task :default => :usuario
+
+desc "Informacion Usuario"
+task :usuario, :nombre do |x, args|
+	nombre = args[:nombre] || 'made_503'
+	sh "ruby tweet.rb #{nombre}"
+end
+
+desc "Amigos mas populares de un usuario"
+task :usuario, :nombre, :numero do |x, args|
+	nombre = args[:nombre] || 'made_503'
+	numero = args[:numero] || '2'
+	sh "ruby popular.rb #{nombre} #{numero}"
+end
