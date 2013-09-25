@@ -25,9 +25,23 @@ Aplicación Twitter Popularidad
 **Paso 5.** Crearemos el archivo popular.rb donde pasaremos como argumento un nombre de usuario y un numero de amigos de ese usuario y nos devolverá en orden de popularidad los amigos de dicho usuario.
 
 
-### IMPORTANTE ###
+## IMPORTANTE ##
 
 1. Para poder ejecutar está aplicación, tendrás que ir a configure.rb y poner tus propiar claves y tokens.
 
 
-2. Para ejecutar el archivo popular.rb, tendrás que utilizar tu usuario de Twitter ya que no podrías consultar desde la cuenta de otro sus followers, a menos que no este protegida.
+2. Para ejecutar el archivo popular.rb, tendrás que utilizar tu usuario de Twitter ya que no podrías consultar desde la cuenta de otro sus followers, a menos que no esta protegida.
+
+
+### EJECUCIÓN ###
+
+Tweet.rb
+
+	ruby tweet.rb
+	ruby tweet.rb NombreUsuario
+
+Popular.rb
+
+	ruby popular.rb
+	ruby popular.rb NombreUsuario
+	ruby popular.rb NombreUsuario NºSeguidores
