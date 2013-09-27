@@ -1,6 +1,4 @@
-task :default => :usuario
-
 desc "Formulario tweets de un usuario"
-task :usuario do |x, args|
-	sh "ruby Formulario.rb"
+task :default do
+  sh "ruby Formulario.rb"
 end
