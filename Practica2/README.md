@@ -1,4 +1,4 @@
-Aplicación Twitter Popularidad
+Formulario Tweets
 ================================
 
 **Paso 1.** Crearemos el archivo `configure.rb`
