@@ -24,9 +24,11 @@ Formulario.rb
 
 En el archivo `configure.rb.template` rellenar con lo siguiente:
 
-    1. Clave y secreto del consumidor
-    2. OAUTH token
-    3. OAUTH secret token 
+1. Clave y secreto del consumidor
+
+2. OAUTH token
+
+3. OAUTH secret token 
 
  Para ello darse de alta en http://dev.twitter.com
  
