@@ -1,6 +1,8 @@
 require 'twitter'
 require './configure'
 require 'rack'
+require 'pry-debugger'
+require 'thin'
 
 class Formulario
 	def call env
