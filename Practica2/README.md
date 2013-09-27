@@ -4,11 +4,13 @@ Aplicación Twitter Popularidad
 **Paso 1.** Crearemos el archivo configure.rb con ouath y el consumer.
 
 **Paso 2.** Creamos el archivo Formulario.rb:
+	
 	**Paso 2.1** 
 
 ## EJECUCIÓN ##
 
 Formulario.rb
+	
 	rake
 
 ## IMPORTANTE ##
