@@ -1,0 +1,8 @@
+task :default => :usuario
+
+desc "Formulario tweets de un usuario"
+task :usuario do |x, args|
+	nombre = args[:nombre] || 'made_503'
+	numero = args[:numero] || '2'
+	sh "ruby Formulario.rb"
+end
