@@ -9,12 +9,9 @@ class Formulario
 		
 		binding.pry if ARGV[0]
 		res['Content-Type'] = 'text/html'
-		name = (req["name1"] && req["name1"] != '') ? req["name1"] :'made_503'
+		nombre = (req["name1"] && req["name1"] != '') ? req["name1"] :'made_503'
 		
-		tweet = Twitter.user_timeline(name).first
-		if tweet
-			puts "#{tweet.text}"
-		end
+		tweet = Twitter.user_timeline(nombre).first.text 
 
 		res.write <<-"EOS"
 			<!DOCTYPE HTML>
@@ -28,8 +25,10 @@ class Formulario
 				<body>
 					<h3>
 						<form action="/" method="post">
-							Nombre usuario: <input type="text" name="fname1" autofocus></br>
-							Numero de Tweets: <input type="text" name="number"></br>
+							Nombre usuario en Twitter: <input type="text" name="name1" value="" autofocus></br>
+							Ultimo tweet: #{tweet}
+						
+							Numero de Tweets: <input type="text" name="number" value=""></br>
 							<input type="submit" value="Enviar">
 						</form>
 					</h3>
