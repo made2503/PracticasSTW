@@ -33,7 +33,9 @@ En el archivo `configure.rb.template` rellenar con lo siguiente:
 ## DESARROLLADOR ##
 
 Madelaine Martin
+
 alu0100537130@ull.edu.es
+
 ETSII. Universidad de La Laguna
 
 
