@@ -1,11 +1,17 @@
 Aplicación Twitter Popularidad
 ================================
 
-**Paso 1.** Crearemos el archivo configure.rb con ouath y el consumer.
+**Paso 1.** Crearemos el archivo 'configure.rb'
 
-**Paso 2.** Creamos el archivo Formulario.rb:
+**Paso 2.** En el gemfile agregamos las siguientes gemas:
 	
-**Paso 2.1** 
+	rack
+	pry-debugger --> Debugger
+	thin --> Servidor
+
+**Paso 3.** Creamos el archivo 'Formulario.rb':
+	
+**Paso 3.1**  
 
 ## EJECUCIÓN ##
 
@@ -15,6 +21,13 @@ Formulario.rb
 
 ## IMPORTANTE ##
 
-1. Para poder ejecutar está aplicación, tendrás que ir a configure.rb y poner tus propiar claves y tokens.
+En el archivo 'configure.rb.template' rellenar con lo siguiente:
+
+    1. Clave y secreto del consumidor
+    2. OAUTH token
+    3. OAUTH secret token 
+
+ Para ello darse de alta en http://dev.twitter.com
+
 
 
