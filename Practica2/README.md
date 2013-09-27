@@ -5,7 +5,7 @@ Aplicación Twitter Popularidad
 
 **Paso 2.** Creamos el archivo Formulario.rb:
 	
-	**Paso 2.1** 
+**Paso 2.1** 
 
 ## EJECUCIÓN ##
 
