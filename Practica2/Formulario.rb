@@ -3,7 +3,10 @@ require './configure'
 require 'rack'
 require 'thin'
 require 'erb'
+<<<<<<< HEAD
 require 'bootstrap'
+=======
+>>>>>>> Development
 
 class Formulario
 
