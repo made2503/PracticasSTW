@@ -13,8 +13,11 @@ Formulario Tweets
 **Paso 4.** Creamos el archivo `Formulario.rb`:
 	
 **Paso 4.1** Crearemos el constructor
+
 **Paso 4.2** Crearemos el método erb para abrir el template creado en `Formulario.html.erb`
+
 **Paso 4.3** Crearemos el método call
+
 **Paso 4.4** Iniciaremos el servidor
 
 
