@@ -1,51 +1,49 @@
 require 'twitter'
 require './configure'
 require 'rack'
+require 'thin'
+require 'erb'
+require 'bootstrap'
 
 class Formulario
+
+	#Constructor
+	def initialize 
+		@t_tweet = []
+		@nombre = ''
+		@numero = 0
+	end
+
+	#Template del ERB
+	def erb(template)
+		template_file = File.open("Formulario.html.erb", 'r')
+		ERB.new(File.read(template_file)).result(binding)
+	end
+
+	#Método call
 	def call env
 		req = Rack::Request.new(env)
-		res = Rack::Response.new 
-		
+		@t_tweet = []
 		binding.pry if ARGV[0]
-		res['Content-Type'] = 'text/html'
-		name = (req["name1"] && req["name1"] != '') ? req["name1"] :'made_503'
-		
-		tweet = Twitter.user_timeline(name).first
-		if tweet
-			puts "#{tweet.text}"
+		@nombre = (req["name1"] && req["name1"] != '' && Twitter.user?(req["name1"]) == true) ? req["name1"] : ''
+ 		@numero = (req["number"] && req["number"].to_i > 1) ? req["number"].to_i : 1
+		puts "#{@nombre}"
+
+		if @nombre == req["name1"]
+			puts "#{@t_tweet}"
+			tweet = Twitter.user_timeline(@nombre, {:count => @numero.to_i})
+			@t_tweet = (@t_tweet && @t_tweet != '') ? tweet.map{|i| i.text} : ''
 		end
 
-		res.write <<-"EOS"
-			<!DOCTYPE HTML>
-			<html>
-				<head>
-					<meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
-					<title>
-						Fomulario Tweets
-					</title>
-				</head>
-				<body>
-					<h3>
-						<form action="/" method="post">
-							Nombre usuario: <input type="text" name="fname1" autofocus></br>
-							Numero de Tweets: <input type="text" name="number"></br>
-							<input type="submit" value="Enviar">
-						</form>
-					</h3>
-				</body>
-			</html>
-			EOS
-			res.finish
+		Rack::Response.new(erb('Formulario.html.erb'))
 	end
 end
 
 if $0 == __FILE__
 	require 'rack'
-  	require 'rack/showexceptions'
 	Rack::Server.start(
   		:app => Formulario.new,
-  		:Port => 8080,
+  		:Port => 9999,
   		:server => 'thin'
 	)
 end
