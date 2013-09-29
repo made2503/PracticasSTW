@@ -2,30 +2,195 @@
 	<html>
 		<head>
 			<meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+			<style type="text/css">
+
+				/* 960 */
+				.container_12 {
+					margin-left: auto;
+					margin-right: auto;
+					width: 960px;
+				}
+
+				.grid_3,
+				.grid_12,
+				.grid_4{
+					display: inline;
+					float: left;
+					margin-left: 10px;
+					margin-right: 10px;
+				}
+
+				.container_12 .grid_12{
+					width: 940px;
+				}
+
+				.container_12 .grid_3{
+					width: 220px;
+				}
+
+				.container_12 .prefix_9{
+					padding-left: 720px;
+				}
+
+				.alpha{
+					margin-left: 0;
+				}
+
+				.clear{
+					clear: both;
+					display: block;
+					overflow: hidden;
+					visibility: hidden;
+					width: 0;
+					height: 0;
+				}
+
+				/* Fondo */
+				body{
+					background-color: #58D3F7;
+				}
+
+				h3{
+					color: blue;
+				}
+
+				h1, h2, h3, h4, h5, h6{
+					font-family: "Trebuchet MS";
+				}
+
+				h5{
+					color: #BF00FF;
+					font: bold 12px "Trebuchet MS";
+				}
+				/* Párrafo */
+				p{
+					color: black;
+					font: bold 16px "Trebuchet MS";
+				}
+
+				/* Cabecera */
+				#header{
+					background-color: black;
+					height: 2em;
+					margin: 0;
+
+				}
+
+				#header p{
+					color: white;
+					text-align: center;
+					font-size: 0.8em;
+					line-height: 1.3em;
+				}
+
+				/* Contenido */
+				#principal{
+					font-family: "Trebuchet MS";
+					width: 25em;
+					float: left;
+					font-size: 2em;
+				}
+
+				#principal2{
+					width: 30em;
+					text-align: left;
+					font-family: Arial;
+					font-size: 1em;
+					padding: 2em 2em 2em 2em;
+					float: left;
+					
+				}
+
+				#banner{
+					border-bottom: 5px solid black;
+				}
+
+				#foo{
+					float: left;
+				}
+
+				.opciones{
+					margin-left: 15px;
+				}
+
+				/* Aviso */
+				#alerta{
+					font-size: 1.2em;
+					color: red;
+				}
+
+				/* Vista tweet */
+				#tweet{
+					color: black;
+					text-align: left;
+					margin-bottom: 1em;
+				}
+
+			</style>
+
 			<title>
-				Fomulario Tweets
+				Tweets
 			</title>
 		</head>
 		<body>
-			<h3>
-				<form action="/" method="post">
-					Nombre usuario en Twitter: <input type="text" name="name1" value="" size="20" maxlength="20" autofocus></br>
-					Numero de Tweets que desea ver: <input type="text" name="number" value="" size="10" maxlength="10"></br>
-					<input type="submit" value="Enviar">
-				</form>
-			</h3>
-			<% if @nombre == '' %>
-				<p> Introducir usuario o usuario incorrecto </p>
-			<% else %>
-				<p> Usuario: <%= @nombre %> </p>
-			<% end %>
-			<% if @nombre != '' %>
-				<p> <%= @numero %> Tweets: </p>
-				<ol> 
-					<% @t_tweet.each do |i| %>
-						<li><%= i %><br/></li>
-					<% end %>
-				</ol>
-			<% end %> 
+			<!-- HEADER -->
+			<div id="header">
+				<div class="container_12">
+					<div class="grid_3 prefix_9">
+						<p> APP Twitter: Tweets </p> 
+					</div>
+					<div class="clear"></div>
+				</div>
+			</div>
+			<!-- FIN HEADER -->
+
+			<!-- PROGRAMA PRINCIPAL -->
+			<div class="container_12">
+				<div class="grid_12" id="principal">
+					<div class="grid_8 alpha">
+						<div class="opciones">
+							<form action="/" method="post">
+								<p>Nombre usuario en Twitter: <input type="text" name="name1" value="" size="20" maxlength="20" autofocus></br>
+								Numero de Tweets que desea ver: <input type="text" name="number" value="" size="10" maxlength="10"></br>
+								<input type="submit" value="Enviar"></p>
+							</form>
+						</div>
+					</div>
+				</div>
+
+				<div class="grid_4 alpha">
+					<div class="opciones">
+						<div id="principal2">
+							<% if @nombre == '' %>
+								<p id="alerta"> Introducir usuario o usuario incorrecto </p>
+							<% else %>
+								<h3> Usuario:</h3>
+								<ol>
+									<h4><%= @nombre %></h4>
+								</ol>
+							<% end %>
+							<% if @nombre != '' %>
+								<h3>Tweets: </h3>
+								<ol> 
+									<% @t_tweet.each do |i| %>
+										<h4 id="tweet"><%= i %><br/></h4>
+									<% end %>
+								</ol>
+							<% end %>
+						</div>
+					</div>
+				</div>
+				
+				<!-- FOOTER -->
+				<div class="grid_12" id="banner"></div>
+				<div class="clear"></div>
+				<div class="grid_4 prefix_8" id="footer">
+					<h5> Madelaine Martín Pazó <br/>
+					ETSII. Universidad de La Laguna </h5>
+				</div>
+				<!-- FIN FOOTER -->
+				
+			</div>
+			<!-- FIN PROGRAMA PRINCIPAL -->
 		</body>
 	</html>

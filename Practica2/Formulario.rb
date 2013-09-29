@@ -3,7 +3,6 @@ require './configure'
 require 'rack'
 require 'thin'
 require 'erb'
-require 'bootstrap'
 
 class Formulario
 
