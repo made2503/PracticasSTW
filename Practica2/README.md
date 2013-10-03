@@ -1,4 +1,4 @@
-<>![](http://banot.etsii.ull.es/alu4103/twitter.jpg)
+<strong>![](http://banot.etsii.ull.es/alu4103/twitter.jpg)</strong>
 Tweets
 ================================
 
