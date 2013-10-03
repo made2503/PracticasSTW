@@ -23,8 +23,11 @@ RockPaperScissors.rb
 	ruby RockPaperScissors.rb
 	rake
 
-## IMPORTANTE ##
- 
+## VISTA ##
+
+	http://localhost:8080/
+
+
 ## DESARROLLADOR ##
 
 Madelaine Martin
