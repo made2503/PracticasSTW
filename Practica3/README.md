@@ -1,5 +1,6 @@
 <strong>![](http://banot.etsii.ull.es/alu4103/rps.jpeg)</strong>
-Tweets
+
+Rock, Paper and Scissors
 ================================
 
 **Paso 1.** Crearemos el archivo `README.md`
