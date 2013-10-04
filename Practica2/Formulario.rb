@@ -42,7 +42,7 @@ if $0 == __FILE__
 	require 'rack'
 	Rack::Server.start(
   		:app => Formulario.new,
-  		:Port => 8080,
+  		:Port => 9292,
   		:server => 'thin'
 	)
 end
