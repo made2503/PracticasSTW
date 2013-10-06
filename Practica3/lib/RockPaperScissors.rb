@@ -1,6 +1,8 @@
 require 'rack/request'
 require 'rack/response'
 require 'haml'
+require 'thin'
+require 'rack'
 
 module RockPaperScissors
 	class RPS
@@ -23,13 +25,13 @@ module RockPaperScissors
 			player_throw = req.GET["choice"]
 			anwser = 
 				if !@throws.include?(player_throw)
-					"Elegir uno"
+					"Choose one"
 				elsif player_throw == computer_throw
-					"Empate"
+					"TIE"
 				elsif computer_throw == @defeat[player_throw]
-					"Gana Jugador"
+					"PLAYER 1 WIN!"
 				else
-					"Gana Maquina"
+					"OUCH! PLAYER 2 WIN"
 				end
 
 			engine = Haml::Engine.new File.open("views/index.html.haml").read
@@ -45,12 +47,3 @@ module RockPaperScissors
 		end #call
 	end #Clase
 end #Modulo
-
-if $0 == __FILE__
-	require 'rack'
-	Rack::Server.start(
-		:app => RockPaperScissors::RPS.new,
-		:Port => 8080,
-		:server => 'thin'
-	)
-end

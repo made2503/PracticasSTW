@@ -1,31 +1,39 @@
 %html
   %head
     %meta{'http-equiv' => 'Content-Type', :content => 'text/html'}
+    %title RPS
   %body
     %ol
-      %a{:class => 'button', :href => '?choice=rock'} Rock
+      %h3 RPS
+      %a{:href => '?choice=rock'} Rock
       %a{:href => '?choice=paper'} Paper
       %a{:href => '?choice=scissors'} Scissors
+
+
+    %center
+      %h1 WELCOME TO THE GAME
+      %br
+
+    %center
+      %h2 Player 1
+      - if(player_throw == 'rock')
+        %img{:src => 'http://banot.etsii.ull.es/alu4103/piedra.png', :alt => 'Rock'}
+      - elsif (player_throw == 'scissors')
+        %img{:src => 'http://banot.etsii.ull.es/alu4103/tijeras.png', :alt => 'Scissors'}
+      - elsif (player_throw == 'paper')
+        %img{:src => 'http://banot.etsii.ull.es/alu4103/papel.png', :alt => 'Paper'}
+
+      %h2 vs
+      
+      %h2 Player 2
+      - if(computer_throw == 'rock')
+        %img{:src => 'http://banot.etsii.ull.es/alu4103/piedra.png', :alt => 'Rock'}
+      - elsif (computer_throw == 'scissors')
+        %img{:src => 'http://banot.etsii.ull.es/alu4103/tijeras.png', :alt => 'Scissors'}
+      - elsif (computer_throw == 'paper')
+        %img{:src => 'http://banot.etsii.ull.es/alu4103/papel.png', :alt => 'Paper'}
     
-
-    - if(player_throw == 'rock')
-      %img{:src => 'http://banot.etsii.ull.es/alu4103/piedra.jpg', :alt => 'Gana Roca'}
-    - elsif (player_throw == 'scissors')
-      %img{:src => 'http://banot.etsii.ull.es/alu4103/tijera.jpg', :alt => 'Gana Tijeras'}
-    - elsif (player_throw == 'paper')
-      %img{:src => 'http://banot.etsii.ull.es/alu4103/papel.jpg', :alt => 'Gana Papel'}
-
-    %h2 vs
-    
-    - system("pause")
-
-    - if(computer_throw == 'rock')
-      %img{:src => 'http://banot.etsii.ull.es/alu4103/piedra.jpg', :alt => 'Gana Roca'}
-    - elsif (computer_throw == 'scissors')
-      %img{:src => 'http://banot.etsii.ull.es/alu4103/tijera.jpg', :alt => 'Gana Tijeras'}
-    - elsif (computer_throw == 'paper')
-      %img{:src => 'http://banot.etsii.ull.es/alu4103/papel.jpg', :alt => 'Gana Papel'}
-
+      %h3= anwser
 
     
 
